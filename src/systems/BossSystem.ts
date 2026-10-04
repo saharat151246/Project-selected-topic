@@ -151,6 +151,11 @@ export class BossSystem {
 
     // ค้นหา Boss บนสนาม
     if (!boss) {
+      // Do not leave a queued Boss message visible if the Boss was removed
+      // outside the normal EnemySystem.resolve() callbacks.
+      this.banner = null;
+      this.bannerTimer = 0;
+      this.pendingBanners = [];
       if (this.activeBoss) {
         // Boss เพิ่งตายหรือหายไป
         // EnemySystem.resolve() determines whether this boss was defeated or escaped later in this frame.

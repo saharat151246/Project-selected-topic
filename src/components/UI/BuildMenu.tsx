@@ -15,7 +15,7 @@ export default function BuildMenu({ x, y, mapWidth, mapHeight, gold, onBuild }: 
   const { left, top, below } = popupPlacement(x, y, mapWidth, mapHeight);
 
   return (
-    <div className={`popup${below ? ' below' : ''}`} style={{ left, top }} role="menu" aria-label="Build tower">
+    <div className={`build-menu${below ? ' below' : ''}`} style={{ left, top }} role="menu" aria-label="Build tower">
       <div className="popup-title">Build Tower</div>
       <div className="build-grid">
         {TOWER_ORDER.map((id) => {

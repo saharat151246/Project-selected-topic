@@ -59,12 +59,12 @@ export default function TowerInfoPanel({
 
   return (
     <div
-      className={`popup${below ? ' below' : ''}`}
+      className={`tower-info-panel${below ? ' below' : ''}`}
       style={{ left, top }}
       role="dialog"
       aria-label={`${info.name} tower`}
     >
-      <div className="popup-title">
+      <div className="tower-info-header">
         <span>
           {info.symbol} {info.name} · Level {info.level}
         </span>
